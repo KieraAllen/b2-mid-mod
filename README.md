@@ -44,7 +44,7 @@ Once the time for the assessment is up, push your code to your fork and create a
 
 User stories will be released at the start of the assessment.
 
-- [ ] Story 1
+- [x] Story 1
 ```
 As a user,
 When I visit a mechanics index page
@@ -55,7 +55,7 @@ Ex:
    Sam Mills - 10 years of experience
    Kara Smith - 11 years of experience
 ```
-- [ ] Story 2
+- [x] Story 2
 ```
 As a visitor,
 When I visit an amusement park’s show page

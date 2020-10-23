@@ -27,7 +27,7 @@ describe AmusementPark, type: :model do
                            )
     end
     it "#average_ride_rating" do
-      expect(@hershey_park.average_ride_rating).to eq(6.7)
+      expect(@hershey_park.average_ride_rating.to_f.round(1)).to eq(6.7)
     end
   end
 end

@@ -1,18 +1,3 @@
-# As a visitor,
-# When I visit an amusement park’s show page
-# I see the name and price of admissions for that amusement park
-# And I see the names of all the rides that are at that park
-# And I see the average thrill rating of this amusement park’s rides
-# Ex: Hershey Park
-#    Admissions: $50.00
-#
-#    Rides:
-#           1. Lightning Racer
-#           2. Storm Runner
-#           3. The Great Bear
-#
-#    Average Thrill Rating of Rides: 7.8/10
-
 require 'rails_helper'
 
 RSpec.describe "As a visitor" do
@@ -49,14 +34,12 @@ RSpec.describe "As a visitor" do
 
       visit "/amusement_parks/#{@hershey_park.id}"
 
-      save_and_open_page
-
       expect(page).to have_content("Rides:")
       expect(page).to have_content(@lightning.name)
       expect(page).to have_content(@storm.name)
       expect(page).to have_content(@bear.name)
 
-      expect(page).to have_content("Average Thrill Rating of Rides: #{@hershey_park.average_ride_rating}/10")
+      expect(page).to have_content("Average Thrill Rating of Rides: #{@hershey_park.average_ride_rating.to_f.round(1)}/10")
     end
   end
 end
