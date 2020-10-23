@@ -9,6 +9,7 @@
 AmusementPark.destroy_all
 Mechanic.destroy_all
 Ride.destroy_all
+MechanicRide.destroy_all
 
 # Amusement Parks
 hershey_park = AmusementPark.create!(name: "Hershey Park",
@@ -34,6 +35,21 @@ bear = Ride.create!(name: "The Great Bear",
                          amusement_park_id: hershey_park.id
                          )
 
+frog = Ride.create!(name: "The Frog Hopper",
+                         thrill_rating: 6,
+                         amusement_park_id: water_world.id
+                         )
+
+hothothot = Ride.create!(name: "Fahrenheit",
+                         thrill_rating: 9,
+                         amusement_park_id: water_world.id
+                         )
+
+kiss = Ride.create!(name: "The Kiss Raise",
+                         thrill_rating: 2,
+                         amusement_park_id: water_world.id
+                         )
+
 # Mechanics
 mechanic_sam = Mechanic.create!(name: "Sam Mills",
                                 years_experience: "10"
@@ -42,3 +58,13 @@ mechanic_sam = Mechanic.create!(name: "Sam Mills",
 mechanic_kara = Mechanic.create!(name: "Kara Smith",
                                  years_experience: "11"
                                  )
+
+# Mechanic Rides
+MechanicRide.create!(mechanic_id: mechanic_kara.id,
+                      ride_id: frog.id)
+
+MechanicRide.create!(mechanic_id: mechanic_kara.id,
+                      ride_id: hothothot.id)
+
+MechanicRide.create!(mechanic_id: mechanic_kara.id,
+                      ride_id: kiss.id)
