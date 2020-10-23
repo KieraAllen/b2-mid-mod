@@ -10,13 +10,35 @@ AmusementPark.destroy_all
 Mechanic.destroy_all
 Ride.destroy_all
 
-#Amusement Parks
+# Amusement Parks
+hershey_park = AmusementPark.create!(name: "Hershey Park",
+                                     admission_price: "$50.00"
+                                     )
+water_world = AmusementPark.create!(name: "Water World",
+                                    admission_price: "$45.00"
+                                    )
 
-#Mechanics
+# Rides
+lightning = Ride.create!(name: "Lightning Racer",
+                         thrill_rating: 8,
+                         amusement_park_id: hershey_park.id
+                         )
+
+storm = Ride.create!(name: "Storm Runner",
+                         thrill_rating: 7,
+                         amusement_park_id: hershey_park.id
+                         )
+
+bear = Ride.create!(name: "The Great Bear",
+                         thrill_rating: 5,
+                         amusement_park_id: hershey_park.id
+                         )
+
+# Mechanics
 mechanic_sam = Mechanic.create!(name: "Sam Mills",
-                      years_experience: "10"
-                      )
+                                years_experience: "10"
+                                )
 
 mechanic_kara = Mechanic.create!(name: "Kara Smith",
-                      years_experience: "11"
-                      )
+                                 years_experience: "11"
+                                 )
